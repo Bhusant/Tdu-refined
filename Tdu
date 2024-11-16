@@ -114,6 +114,37 @@ Instance.new("UICorner", DD).CornerRadius = UDim.new(0, 8)
 DD.MouseButton1Click:Connect(function()
 game:GetService("Players").LocalPlayer.Character.TitanTVMain.RedScreenEvent:FireServer()
 end)
+
+local A = Instance.new("TextButton")
+A.Parent = f
+A.Size = UDim2.new(1, 0, 0.02, 0)
+A.Position = UDim2.new(0, 0, 0.1, 0)
+A.BackgroundColor3 = Color3.new(0.1, 0.1, 0.1)
+A.BackgroundTransparency = 0
+A.Text = "Punch"
+A.TextColor3 = Color3.new(1, 1, 1)
+A.TextScaled = true
+A.BorderSizePixel = 0
+Instance.new("UICorner", A).CornerRadius = UDim.new(0, 8)
+
+local Plr=game.Players.LocalPlayer
+local character=Plr.Character or Plr.CharacterAdded:Wait()
+A.MouseButton1Click:Connect(function()
+    local function findPunchEvent()
+        for _,desc in pairs(character:GetDescendants()) do
+            if desc:IsA("LocalScript") then
+                local punchEvent=desc:FindFirstChild("PunchEvent")
+                if punchEvent then return punchEvent end
+            end
+        end
+        return nil
+    end
+    local punchEvent=findPunchEvent()
+    if punchEvent then
+        local args6={[1]=CFrame.new(1561.6680908203125,67.74654388427734,-5311.3740234375)*CFrame.Angles(2.87148118019104,-1.1081223487854004,2.8987159729003906)}
+        punchEvent:FireServer(unpack(args6))
+    end
+end)
 local children = f:GetChildren()
 for _, child in pairs(children) do
     if child:IsA("TextButton") then
