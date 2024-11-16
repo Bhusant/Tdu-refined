@@ -1,0 +1,126 @@
+local p = game.Players.LocalPlayer
+local g = Instance.new("ScreenGui")
+g.Parent = p:WaitForChild("PlayerGui")
+local f = Instance.new("ScrollingFrame")
+f.Parent = g
+f.BackgroundColor3 = Color3.new(0, 0, 0)
+f.Size = UDim2.new(0.2, 0, 0.2, 0)
+f.Position = UDim2.new(0.05, 0, 0.05, 0)
+f.BackgroundTransparency = 0.2
+f.BorderSizePixel = 0
+local u = Instance.new("UIStroke", f)
+u.Thickness = 10
+u.Color = Color3.new(0, 0, 0)
+u.Transparency = 0.2
+local tx = Instance.new("TextLabel", g)
+tx.Size = UDim2.new(0.2, 0, 0.03, 0)
+tx.Position = UDim2.new(0.05, 0, 0.007, 0)
+tx.Text = "Fight in school script, made by Exuctive_Mem on discord."
+tx.TextColor3 = Color3.new(1, 1, 1)
+tx.TextScaled = true
+tx.BackgroundColor3 = Color3.new(0, 0, 0)
+tx.BackgroundTransparency = 0.2
+tx.BorderSizePixel = 0
+local B = Instance.new("TextButton")
+B.Parent = f
+B.Size = UDim2.new(1, 0, 0.02, 0)
+B.Position = UDim2.new(0, 0, 0, 0)
+B.BackgroundColor3 = Color3.new(0.1, 0.1, 0.1)
+B.BackgroundTransparency = 0
+B.Text = "Shoot no cooldown tool"
+B.TextColor3 = Color3.new(1, 1, 1)
+B.TextScaled = true
+B.BorderSizePixel = 0
+Instance.new("UICorner", B).CornerRadius = UDim.new(0, 8)
+local Plr = game.Players.LocalPlayer
+local mouse = Plr:GetMouse()
+
+B.MouseButton1Click:Connect(function()
+    local tool = Instance.new("Tool")
+    tool.RequiresHandle = false
+    tool.Parent = Plr.Backpack
+    tool.Name = "SpamShootTool"
+    tool.Activated:Connect(function()
+        local character = Plr.Character or Plr.CharacterAdded:Wait()
+        local mousePosition = mouse.Hit.p
+        local newCFrame = CFrame.new(mousePosition)
+
+        local potentialEvents = {
+            character:FindFirstChild("TitanSpeakermanMain") and character.TitanSpeakermanMain:FindFirstChild("TitanSpeakerShoot"),
+            character:FindFirstChild("BigCamera") and character.BigCamera:FindFirstChild("ToiletThrow"),
+            character:FindFirstChild("BigSpeakerMain") and character.BigSpeakerMain:FindFirstChild("KnifeThrowAdvanced")
+        }
+
+        for _, remoteEvent in ipairs(potentialEvents) do
+            if remoteEvent then
+                local success, err = pcall(function()
+                    remoteEvent:FireServer("E", newCFrame)
+                end)
+                if success then
+                    break
+                end
+            end
+        end
+    end)
+end)
+
+Instance.new("UICorner", tx).CornerRadius = UDim.new(0, 8)
+local children = f:GetChildren()
+for _, child in pairs(children) do
+    if child:IsA("TextButton") then
+        child.MouseButton1Click:Connect(function()
+            local sound = Instance.new("Sound")
+            sound.Parent = game.SoundService
+            sound.SoundId = "rbxassetid://6042053626"
+            sound:Play()
+        end)
+    end
+end
+
+local BB = Instance.new("TextButton")
+BB.Parent = f
+BB.Size = UDim2.new(1, 0, 0.02, 0)
+BB.Position = UDim2.new(0, 0, 0.025, 0)
+BB.BackgroundColor3 = Color3.new(0.1, 0.1, 0.1)
+BB.BackgroundTransparency = 0
+BB.Text = "Speaker strider Boom wave"
+BB.TextColor3 = Color3.new(1, 1, 1)
+BB.TextScaled = true
+BB.BorderSizePixel = 0
+Instance.new("UICorner", BB).CornerRadius = UDim.new(0, 8)
+BB.MouseButton1Click:Connect(function()
+local args5 = {
+    [1] = CFrame.new(-50.63232421875, -5.2974853515625, -9106.66015625) * CFrame.Angles(-2.2630279064178467, 0.11833591014146805, 3.0001473426818848)
+}
+game:GetService("Players").LocalPlayer.Character.StriderStrider.BlastMusic:FireServer(unpack(args5))
+end)
+
+local D = Instance.new("TextButton")
+D.Parent = f
+D.Size = UDim2.new(1, 0, 0.02, 0)
+D.Position = UDim2.new(0, 0, 0.05, 0)
+D.BackgroundColor3 = Color3.new(0.1, 0.1, 0.1)
+D.BackgroundTransparency = 0
+D.Text = "Titan Tv Free upgrade"
+D.TextColor3 = Color3.new(1, 1, 1)
+D.TextScaled = true
+D.BorderSizePixel = 0
+Instance.new("UICorner", D).CornerRadius = UDim.new(0, 8)
+D.MouseButton1Click:Connect(function()
+game:GetService("Players").LocalPlayer.Character.TitanTVMain.Upgrade:FireServer()
+end)
+
+local DD = Instance.new("TextButton")
+DD.Parent = f
+DD.Size = UDim2.new(1, 0, 0.02, 0)
+DD.Position = UDim2.new(0, 0, 0.075, 0)
+DD.BackgroundColor3 = Color3.new(0.1, 0.1, 0.1)
+DD.BackgroundTransparency = 0
+DD.Text = "Titan Tv red screen no cooldown"
+DD.TextColor3 = Color3.new(1, 1, 1)
+DD.TextScaled = true
+DD.BorderSizePixel = 0
+Instance.new("UICorner", DD).CornerRadius = UDim.new(0, 8)
+DD.MouseButton1Click:Connect(function()
+game:GetService("Players").LocalPlayer.Character.TitanTVMain.RedScreenEvent:FireServer()
+end)
