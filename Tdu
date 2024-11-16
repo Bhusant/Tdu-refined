@@ -66,17 +66,6 @@ B.MouseButton1Click:Connect(function()
 end)
 
 Instance.new("UICorner", tx).CornerRadius = UDim.new(0, 8)
-local children = f:GetChildren()
-for _, child in pairs(children) do
-    if child:IsA("TextButton") then
-        child.MouseButton1Click:Connect(function()
-            local sound = Instance.new("Sound")
-            sound.Parent = game.SoundService
-            sound.SoundId = "rbxassetid://6042053626"
-            sound:Play()
-        end)
-    end
-end
 
 local BB = Instance.new("TextButton")
 BB.Parent = f
@@ -125,3 +114,14 @@ Instance.new("UICorner", DD).CornerRadius = UDim.new(0, 8)
 DD.MouseButton1Click:Connect(function()
 game:GetService("Players").LocalPlayer.Character.TitanTVMain.RedScreenEvent:FireServer()
 end)
+local children = f:GetChildren()
+for _, child in pairs(children) do
+    if child:IsA("TextButton") then
+        child.MouseButton1Click:Connect(function()
+            local sound = Instance.new("Sound")
+            sound.Parent = game.SoundService
+            sound.SoundId = "rbxassetid://6042053626"
+            sound:Play()
+        end)
+    end
+end
