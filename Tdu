@@ -1,5 +1,6 @@
 local p = game.Players.LocalPlayer
 local g = Instance.new("ScreenGui")
+g.ResetOnSpawn = false
 g.Parent = p:WaitForChild("PlayerGui")
 local f = Instance.new("ScrollingFrame")
 f.Parent = g
