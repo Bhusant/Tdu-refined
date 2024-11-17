@@ -145,6 +145,28 @@ A.MouseButton1Click:Connect(function()
         punchEvent:FireServer(unpack(args6))
     end
 end)
+
+local AA = Instance.new("TextButton")
+AA.Parent = f
+AA.Size = UDim2.new(1, 0, 0.02, 0)
+AA.Position = UDim2.new(0, 0, 0.1, 0)
+AA.BackgroundColor3 = Color3.new(0.1, 0.1, 0.1)
+AA.BackgroundTransparency = 0
+AA.Text = "Infinite Fly (only if you have Jetpack)"
+AA.TextColor3 = Color3.new(1, 1, 1)
+AA.TextScaled = true
+AA.BorderSizePixel = 0
+Instance.new("UICorner", AA).CornerRadius = UDim.new(0, 8)
+local Plr=game.Players.LocalPlayer
+local character=Plr.Character or Plr.CharacterAdded:Wait()
+AA.MouseButton1Click:Connect(function()
+if Plr.Character.IsFlying.Value == false then
+Plr.Character.IsFlying.Value = true
+else
+Plr.Character.IsFlying.Value = false
+end
+end)
+
 local children = f:GetChildren()
 for _, child in pairs(children) do
     if child:IsA("TextButton") then
