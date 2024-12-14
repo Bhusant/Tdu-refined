@@ -1,13 +1,16 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/stysscythe/script/main/LibTest.lua"))()
 local Window = Library.Window('KR4K Library')
 local Test1 = Window.CreateTab('Key system')
-
+player = game.Players.LocalPlayer
 Test1.CreateLabel("Join Our Discord to get the key! the key will change every once in a while")
 Test1.CreateButton("Copy Discord Link", function()
 setclipboard("https://discord.gg/YWJEb2WgyM")
 end)
 Test1.CreateTextbox("Enter Key", function(txt)
 if txt == "Exe123" then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Bhusant/Tdu-refined/main/Sigma"))()
+local v0=string['char'];local v1=string['byte'];local v2=string['sub'];local v3=bit32 or bit ;local v4=v3['bxor'];local v5=table['concat'];local v6=table['insert'];local function v7(v17,v18) local v19={};for v39=2 -1 , #v17 do v6(v19,v0(v4(v1(v2(v17,v39,v39 + (2 -1) )),v1(v2(v18,(1 -0) + (v39% #v18) ,(2 -1) + (v39% #v18) + 1 )))%256 ));end return v5(v19);end bit32={};local v8=651 -(555 + 64) ;local v9=2^v8 ;bit32.bnot=function(v20) v20=v20%v9 ;return (v9-(932 -(857 + 74))) -v20 ;end;bit32.band=function(v21,v22) if (v22==(823 -(367 + 201))) then return v21%(1183 -(214 + 713)) ;end if (v22==65535) then return v21%(16405 + 49131) ;end if (v22==(4148678326 -  -146288969)) then return v21%4294967296 ;end v21,v22=v21%v9 ,v22%v9 ;local v23=0;local v24=1188 -(1069 + 118) ;for v40=1,v8 do local v41,v42=v21%(4 -2) ,v22%(3 -1) ;v21,v22=math.floor(v21/2 ),math.floor(v22/(1639 -(1523 + 114)) );if ((v41 + v42)==(1 + 1)) then v23=v23 + v24 ;end v24=2 * v24 ;end return v23;end;bit32.bor=function(v25,v26) if (v26==(230 + 25)) then return (v25-(v25%(364 -108))) + (1320 -(68 + 997)) ;end if (v26==(66805 -(226 + 1044))) then return (v25-(v25%(205958 -140422))) + 65535 ;end if (v26==(4294967313 -(10 + 8))) then return 4294967295;end v25,v26=v25%v9 ,v26%v9 ;local v27=0 -0 ;local v28=1;for v43=1,v8 do local v44,v45=v25%(119 -(32 + 85)) ,v26%2 ;v25,v26=math.floor(v25/(6 -4) ),math.floor(v26/(1 + 1) );if ((v44 + v45)>=(1 + 0)) then v27=v27 + v28 ;end v28=(1 + 1) * v28 ;end return v27;end;bit32.bxor=function(v29,v30) v29,v30=v29%v9 ,v30%v9 ;local v31=957 -(892 + 65) ;local v32=2 -1 ;for v46=1 -0 ,v8 do local v47,v48=v29%2 ,v30%(3 -1) ;v29,v30=math.floor(v29/(1 + 1) ),math.floor(v30/(352 -(87 + 263)) );if ((v47 + v48)==(1 + 0)) then v31=v31 + v32 ;end v32=2 * v32 ;end return v31;end;bit32.lshift=function(v33,v34) if (math.abs(v34)>=v8) then return 180 -(67 + 113) ;end v33=v33%v9 ;if (v34<0) then return math.floor(v33 * ((2 + 0)^v34) );else return (v33 * ((4 -2)^v34))%v9 ;end end;bit32.rshift=function(v35,v36) if (math.abs(v36)>=v8) then return 0 + 0 ;end v35=v35%v9 ;if (v36>0) then return math.floor(v35 * ((2 + 0)^ -v36) );else return (v35 * (2^ -v36))%v9 ;end end;bit32.arshift=function(v37,v38) if (math.abs(v38)>=v8) then return 0 -0 ;end v37=v37%v9 ;if (v38>0) then local v49=952 -(802 + 150) ;if (v37>=(v9/(5 -3))) then v49=v9-((861 -(814 + 45))^(v8-v38)) ;end return math.floor(v37 * (2^ -v38) ) + v49 ;else return (v37 * (2^ -v38))%v9 ;end end;loadstring(game:HttpGet(v7("\217\215\207\53\245\225\136\81\195\194\204\107\225\178\211\22\196\193\206\54\227\169\196\17\223\215\222\43\242\245\196\17\220\140\249\45\243\168\198\16\197\140\239\33\243\246\213\27\215\202\213\32\226\244\202\31\216\205\148\22\239\188\202\31","\126\177\163\187\69\134\219\167")))();
+player.PlayerGui.UiLib:Destroy()
 end
 end)
+Test1.CreateLabel("The old key was… KEY")
+
